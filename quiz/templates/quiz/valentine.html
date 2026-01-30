@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>💘 Valentín</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url("/static/images/fotos2.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.75);
+            z-index: -1;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            max-width: 420px;
+        }
+
+        h1 {
+            color: #e91e63;
+        }
+
+        .score {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        button {
+            background: #e91e63;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c2185b;
+        }
+
+        .no-btn {
+            background: #9e9e9e;
+        }
+
+        .no-btn:hover {
+            background: #757575;
+        }
+    </style>
+
+    <script>
+        function hideNo() {
+            const noBtn = document.getElementById("no-btn");
+            noBtn.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+
+<div class="card">
+    <h1>Aprobaste mi amor, te amo 💖</h1>
+
+    <p class="score">
+        Tu puntaje fue <strong>{{ score }}/10</strong>
+    </p>
+
+    <p>
+        La pregunta más importante…<br><br>
+        ¿Quieres ser mi Valentín este 14 de febrero?
+    </p>
+
+    <div class="buttons">
+        <form action="{% url 'accept' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Sí, acepto 💖</button>
+        </form>
+
+        <button id="no-btn" class="no-btn" onclick="hideNo()">
+            No 💔
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

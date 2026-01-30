@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>💔 Casi…</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url("fotos_fail.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            max-width: 420px;
+        }
+
+        h1 {
+            color: #ff6f61;
+        }
+
+        .score {
+            font-size: 22px;
+            margin: 15px 0;
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+
+        button {
+            background: #ff6f61;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e0554f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>💔 Casi lo logras… Intentalo de nuevo</h1>
+
+    {% if score %}
+        <p class="score">
+            Tu puntaje fue <strong>{{ score }}/10</strong>
+        </p>
+    {% endif %}
+
+    <form action="{% url 'quiz' %}">
+        <button type="submit">Intentar otra vez 🔄</button>
+    </form>
+</div>
+
+</body>
+</html>
