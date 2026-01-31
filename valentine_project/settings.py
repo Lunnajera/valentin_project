@@ -35,14 +35,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEBUG = False
+
 
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "piyleo.com",
-    ".onrender.com",
+     "valentin-project-1.onrender.com",
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
