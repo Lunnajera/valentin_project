@@ -37,7 +37,7 @@ MIDDLEWARE = [
      'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 DEBUG = False
-
+#DEBUG = True
 
 
 ALLOWED_HOSTS = [

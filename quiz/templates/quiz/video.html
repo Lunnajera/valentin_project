@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestro momento ❤️</title>
+
+<style>
+
+body{
+
+margin:0;
+padding:0;
+height:100vh;
+
+/* imagen que se repite */
+
+background-image: url("{% static 'images/sanv.png' %}");
+
+background-repeat: repeat;      /* clave */
+background-size: 800px;         /* tamaño del patrón */
+background-position: top left;
+
+/* centrar contenido */
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+font-family:Arial, sans-serif;
+/* animación zoom romántico */
+animation: zoom 6s ease forwards;
+
+}
+
+
+video{
+
+max-width:80%;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<video controls autoplay>
+
+<source src="/static/images/san.mp4" type="video/mp4">
+
+</video>
+
+</body>
+</html>

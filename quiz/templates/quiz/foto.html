@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestro momento ❤️</title>
+
+<style>
+
+/* Fondo con imagen repetida */
+
+body{
+
+margin:0;
+padding:0;
+height:100vh;
+
+background-image: url("{% static 'images/sanv.png' %}");
+
+background-repeat: repeat;
+background-size: 800px;
+background-position: top left;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+font-family:Arial, sans-serif;
+
+}
+
+/* timer */
+
+#timer{
+
+position: fixed;
+
+bottom: 30px;    
+
+left: 50%;
+
+transform: translateX(-50%);
+
+font-size:80px;
+
+color:red;
+
+background:white;
+
+padding:20px 40px;
+
+border-radius:15px;
+
+box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="timer">1:00</div>
+
+
+<!-- ✅ PLAYLIST YOUTUBE (MUSICA DE FONDO) -->
+
+<iframe width="0" height="0"
+
+src="https://www.youtube.com/embed/videoseries?list=PLnHlzFqezoeotFAXQ3gGiKnOnU7TynsOE&autoplay=1&loop=1"
+
+frameborder="0"
+
+allow="autoplay; encrypted-media"
+
+allowfullscreen>
+
+</iframe>
+<body onclick="document.querySelector('iframe').src += '';"></body>
+
+<script>
+
+let tiempo = 1 * 60;
+
+let contador = setInterval(function(){
+
+let minutos = Math.floor(tiempo / 60);
+
+let segundos = tiempo % 60;
+
+segundos = segundos < 10 ? "0" + segundos : segundos;
+
+document.getElementById("timer").innerText = minutos + ":" + segundos;
+
+tiempo--;
+
+if(tiempo < 0){
+
+clearInterval(contador);
+
+window.location.href = "{% url 'video' %}";
+
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>

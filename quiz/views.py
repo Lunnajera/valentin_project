@@ -45,3 +45,12 @@ def valentine_view(request):
 
 def accept_view(request):
     return render(request, "quiz/accepted.html")
+
+def foto(request):
+
+    return render(request, 'quiz/foto.html')
+
+
+def video(request):
+
+    return render(request, 'quiz/video.html')
