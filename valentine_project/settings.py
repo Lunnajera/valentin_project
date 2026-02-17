@@ -39,13 +39,17 @@ MIDDLEWARE = [
 ]
 DEBUG = False
 #DEBUG = True
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://piyleo.com",
+    "https://www.piyleo.com",
+]
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "piyleo.com",
-     "valentin-project-1.onrender.com",'*',
+    "www.piyleo.com",
+    "valentin01-xxxxx.run.app",
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
