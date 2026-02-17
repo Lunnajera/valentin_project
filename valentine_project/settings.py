@@ -43,15 +43,15 @@ CSRF_TRUSTED_ORIGINS = [
     "https://piyleo.com",
     "https://www.piyleo.com",
 ]
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "piyleo.com",
     "www.piyleo.com",
-    "valentin01-xxxxx.run.app",
+    ".run.app",
 ]
-
+USE_X_FORWARDED_HOST = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
