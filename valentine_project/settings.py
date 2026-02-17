@@ -44,7 +44,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "piyleo.com",
-     "valentin-project-1.onrender.com",
+     "valentin-project-1.onrender.com",'*',
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
